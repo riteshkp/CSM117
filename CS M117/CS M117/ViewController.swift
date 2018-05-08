@@ -25,7 +25,8 @@ class ViewController: UIViewController {
                 Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: {(user, error) in
                     if user != nil          //user exists, and sign in successful
                     {
-                        print("Sucess")
+                        self.performSegue(withIdentifier: "segue", sender: self)    // the withIdentifier is segue too because we names the switch from one screen to the other as segue
+                        print("Log in Sucess")
                     }
                     else                    // user not available, going to print error messages
                     {
@@ -35,7 +36,8 @@ class ViewController: UIViewController {
                         }
                         else                // no generic messages error, so print my message
                         {
-                            print ("Error")
+                            self.performSegue(withIdentifier: "segue", sender: self)
+                            print ("Sign up Error")
                         }
                     }
                 })
