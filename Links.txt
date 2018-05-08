@@ -1,3 +1,10 @@
 sudo gem install cocoapods
 
 https://console.firebase.google.com/u/0/project/csm117-8114c/overview
+
+Log in page - 
+
+1. Once you’re sure that the optional does contain a value, you can access its underlying value by adding an exclamation mark (!) to the end of the optional’s name. The exclamation mark effectively says, “I know that this optional definitely has a value; please use it.” This is known as forced unwrapping of the optional’s value:
+	a. Wrapping!
+	
+
