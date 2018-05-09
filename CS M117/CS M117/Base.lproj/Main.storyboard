@@ -29,28 +29,29 @@
                                     <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iIn-o4-jXX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noe-Ov-o99">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noe-Ov-o99">
                                 <rect key="frame" x="64" y="213" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC2-6e-NWz">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC2-6e-NWz">
                                 <rect key="frame" x="64" y="251" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N0A-Le-iyZ">
-                                <rect key="frame" x="130" y="156" width="115" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENy-f8-N8a">
+                                <rect key="frame" x="64" y="465" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Login"/>
-                                    <segment title="Signup"/>
-                                </segments>
-                            </segmentedControl>
+                                <state key="normal" title="New user? Sign up"/>
+                                <connections>
+                                    <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwj-FQ-30l"/>
+                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ctT-LI-VJ3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -59,8 +60,9 @@
                         <outlet property="actionButton" destination="Hqf-gt-rct" id="z87-YJ-cib"/>
                         <outlet property="emailText" destination="noe-Ov-o99" id="AI6-Xc-nJd"/>
                         <outlet property="passwordText" destination="fC2-6e-NWz" id="Eis-yJ-xaX"/>
-                        <outlet property="segmentControl" destination="N0A-Le-iyZ" id="iTE-zz-6pT"/>
+                        <outlet property="signUpButton" destination="ENy-f8-N8a" id="u2a-7q-h9D"/>
                         <segue destination="xDX-sB-3Ti" kind="show" identifier="segue" id="ijW-kh-Xnx"/>
+                        <segue destination="sFm-n0-Dtd" kind="show" identifier="signup" id="h1i-0B-ICV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -93,7 +95,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2L-BJ-a3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741.60000000000002" y="31.934032983508249"/>
+            <point key="canvasLocation" x="25" y="888"/>
+        </scene>
+        <!--Sign Up-->
+        <scene sceneID="50B-JB-qZu">
+            <objects>
+                <viewController id="sFm-n0-Dtd" customClass="SignUp" customModule="CS_M117" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="99h-wa-ZhW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome to the signup page!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bde-is-r5r">
+                                <rect key="frame" x="67" y="303" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPj-ei-5SE">
+                                <rect key="frame" x="34" y="37" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="signUp:" destination="sFm-n0-Dtd" eventType="touchUpInside" id="u3o-Ip-4zH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="c5u-8l-aeS"/>
+                    </view>
+                    <connections>
+                        <outlet property="signUp" destination="VPj-ei-5SE" id="bXx-TL-9gK"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backtologin" id="QnU-kG-AS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cxm-H0-wug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QnU-kG-AS5"/>
+    </inferredMetricsTieBreakers>
 </document>

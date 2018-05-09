@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F0D691720A15FE9006DBE5C /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D691620A15FE9006DBE5C /* ViewController2.swift */; };
+		3F8A576020A3A77B002034C6 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A575F20A3A77B002034C6 /* SignUp.swift */; };
 		3FA506F2209D491C0058D9A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA506F1209D491C0058D9A8 /* AppDelegate.swift */; };
 		3FA506F4209D491C0058D9A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA506F3209D491C0058D9A8 /* ViewController.swift */; };
 		3FA506F7209D491C0058D9A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA506F5209D491C0058D9A8 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		18D6FCA8D9029FD1748F6A88 /* Pods-CS M117.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS M117.release.xcconfig"; path = "Pods/Target Support Files/Pods-CS M117/Pods-CS M117.release.xcconfig"; sourceTree = "<group>"; };
 		3F0D691620A15FE9006DBE5C /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		3F8A575F20A3A77B002034C6 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		3FA506EE209D491C0058D9A8 /* CS M117.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS M117.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA506F1209D491C0058D9A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA506F3209D491C0058D9A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				3FA506F1209D491C0058D9A8 /* AppDelegate.swift */,
 				3FA506F3209D491C0058D9A8 /* ViewController.swift */,
 				3F0D691620A15FE9006DBE5C /* ViewController2.swift */,
+				3F8A575F20A3A77B002034C6 /* SignUp.swift */,
 				3FA506F5209D491C0058D9A8 /* Main.storyboard */,
 				3FA506F8209D491E0058D9A8 /* Assets.xcassets */,
 				3FA506FA209D491E0058D9A8 /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA506F4209D491C0058D9A8 /* ViewController.swift in Sources */,
+				3F8A576020A3A77B002034C6 /* SignUp.swift in Sources */,
 				3FA506F2209D491C0058D9A8 /* AppDelegate.swift in Sources */,
 				3F0D691720A15FE9006DBE5C /* ViewController2.swift in Sources */,
 			);
