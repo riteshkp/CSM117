@@ -148,6 +148,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupnew:" destination="sFm-n0-Dtd" eventType="touchUpInside" id="Rgc-i7-ed2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8m-8W-ITt">
                                 <rect key="frame" x="67" y="527" width="240" height="30"/>
@@ -159,7 +162,13 @@
                         <viewLayoutGuide key="safeArea" id="c5u-8l-aeS"/>
                     </view>
                     <connections>
+                        <outlet property="emailText" destination="274-fX-piy" id="U4d-Fx-YE4"/>
+                        <outlet property="groupIDText" destination="DeH-r8-jOQ" id="W1v-gL-pak"/>
+                        <outlet property="newgroup" destination="q8m-8W-ITt" id="DBy-5J-0Da"/>
+                        <outlet property="newgroupButton" destination="q8m-8W-ITt" id="hde-S5-SBm"/>
+                        <outlet property="passwordText" destination="cwL-gE-eP5" id="tkg-uk-25f"/>
                         <outlet property="signUp" destination="VPj-ei-5SE" id="bXx-TL-9gK"/>
+                        <outlet property="signupButton" destination="eAc-f0-8UQ" id="Q2U-BP-ld8"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backtologin" id="QnU-kG-AS5"/>
                     </connections>
                 </viewController>

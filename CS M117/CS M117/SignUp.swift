@@ -14,8 +14,21 @@ class SignUp: UIViewController {
     
     @IBAction func signUp(_ sender: UIButton) {
         self.performSegue(withIdentifier: "backtologin", sender: self)
-        
     }
+    
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    
+    @IBOutlet weak var groupIDText: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var newgroupButton: UIButton!
+    
+    @IBAction func signupnew(_ sender: Any) {
+    }
+    
+    
+    @IBOutlet weak var newgroup: UIButton!
+    
     
     
     override func viewDidLoad() {
