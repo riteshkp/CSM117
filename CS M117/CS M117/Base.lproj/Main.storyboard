@@ -120,21 +120,21 @@
                                     <action selector="signUp:" destination="sFm-n0-Dtd" eventType="touchUpInside" id="u3o-Ip-4zH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="274-fX-piy">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="274-fX-piy">
                                 <rect key="frame" x="67" y="216" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwL-gE-eP5">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwL-gE-eP5">
                                 <rect key="frame" x="67" y="270" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DeH-r8-jOQ">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DeH-r8-jOQ">
                                 <rect key="frame" x="67" y="357" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -156,6 +156,9 @@
                                 <rect key="frame" x="67" y="527" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Don't have a group yet?"/>
+                                <connections>
+                                    <action selector="newgroup:" destination="sFm-n0-Dtd" eventType="touchUpInside" id="Ad0-Yu-uVx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,14 +173,52 @@
                         <outlet property="signUp" destination="VPj-ei-5SE" id="bXx-TL-9gK"/>
                         <outlet property="signupButton" destination="eAc-f0-8UQ" id="Q2U-BP-ld8"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backtologin" id="QnU-kG-AS5"/>
+                        <segue destination="MSj-HW-saX" kind="show" identifier="newgroup" id="4W8-vJ-ZAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxm-H0-wug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="31.934032983508249"/>
+            <point key="canvasLocation" x="785" y="32"/>
+        </scene>
+        <!--New Group-->
+        <scene sceneID="i4O-gh-bXF">
+            <objects>
+                <viewController id="MSj-HW-saX" customClass="newGroup" customModule="CS_M117" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Je-DU-0Gv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="new group page" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fj9-PH-d6n">
+                                <rect key="frame" x="82" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-vY-fhq">
+                                <rect key="frame" x="43" y="48" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="backtosignup:" destination="MSj-HW-saX" eventType="touchUpInside" id="P7U-hH-EmR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RLz-FO-8JM"/>
+                    </view>
+                    <connections>
+                        <outlet property="backToSignUp" destination="DFQ-vY-fhq" id="gCJ-gZ-vwF"/>
+                        <segue destination="sFm-n0-Dtd" kind="show" identifier="backsignup" id="0BU-MI-Jw1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAw-Au-dJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1564" y="31.934032983508249"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="h1i-0B-ICV"/>
         <segue reference="QnU-kG-AS5"/>
     </inferredMetricsTieBreakers>
 </document>

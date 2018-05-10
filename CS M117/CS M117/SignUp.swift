@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
 class SignUp: UIViewController {
 
     @IBOutlet weak var signUp: UIButton!
@@ -24,11 +25,34 @@ class SignUp: UIViewController {
     @IBOutlet weak var newgroupButton: UIButton!
     
     @IBAction func signupnew(_ sender: Any) {
+        if emailText.text != "" && passwordText.text != "" && groupIDText.text != ""
+        {
+            Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: {(user, error) in
+                if user != nil
+                {
+                    print("Sucess")
+                }
+                else
+                {
+                    if let myError = error?.localizedDescription        // generic error messages, if available
+                    {
+                        print (myError)
+                    }
+                    else                // no generic messages error, so print my message
+                    {
+                        print ("Error")
+                    }
+                }
+            })
+        }
     }
     
     
     @IBOutlet weak var newgroup: UIButton!
     
+    @IBAction func newgroup(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "newgroup", sender: self)
+    }
     
     
     override func viewDidLoad() {
