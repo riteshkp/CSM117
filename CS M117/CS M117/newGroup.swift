@@ -22,9 +22,12 @@ class newGroup: UIViewController {
     @IBOutlet weak var groupIDText: UITextField!
     
     @IBAction func creategroup(_ sender: UIButton) {
-  
+        
+    if groupIDText.text != ""
+    {
         ref = Database.database().reference()
     ref?.child("list").childByAutoId().setValue(groupIDText.text)
+        }
     }
     
     
