@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class newGroup: UIViewController {
-
+    var ref:DatabaseReference?
+    
     @IBOutlet weak var backToSignUp: UIButton!
     
     @IBAction func backtosignup(_ sender: UIButton) {
         self.performSegue(withIdentifier: "backsignup", sender: self)
     }
     
+    @IBOutlet weak var groupIDText: UITextField!
     
+    @IBAction func creategroup(_ sender: UIButton) {
+  
+        ref = Database.database().reference()
+    ref?.child("list").childByAutoId().setValue(groupIDText.text)
+    }
+    
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 

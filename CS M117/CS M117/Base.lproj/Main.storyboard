@@ -85,6 +85,13 @@
                                     <action selector="action:" destination="xDX-sB-3Ti" eventType="touchUpInside" id="uSx-fa-BfV"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="welcome, the user who just signed up!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-Vf-nDO">
+                                <rect key="frame" x="57" y="170" width="260" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JU6-aM-atQ"/>
@@ -95,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2L-BJ-a3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="888"/>
+            <point key="canvasLocation" x="24.800000000000001" y="887.40629685157433"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="50B-JB-qZu">
@@ -189,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="new group page" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fj9-PH-d6n">
-                                <rect key="frame" x="82" y="269" width="240" height="128"/>
+                                <rect key="frame" x="67" y="115" width="240" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -203,12 +210,28 @@
                                     <action selector="backtosignup:" destination="MSj-HW-saX" eventType="touchUpInside" id="P7U-hH-EmR"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="04I-lH-1Es">
+                                <rect key="frame" x="84" y="232" width="223" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPU-or-Cua">
+                                <rect key="frame" x="100" y="331" width="187" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create Group"/>
+                                <connections>
+                                    <action selector="creategroup:" destination="MSj-HW-saX" eventType="touchUpInside" id="F2B-1D-x6c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RLz-FO-8JM"/>
                     </view>
                     <connections>
                         <outlet property="backToSignUp" destination="DFQ-vY-fhq" id="gCJ-gZ-vwF"/>
+                        <outlet property="groupIDText" destination="04I-lH-1Es" id="45A-Zu-quR"/>
                         <segue destination="sFm-n0-Dtd" kind="show" identifier="backsignup" id="0BU-MI-Jw1"/>
                     </connections>
                 </viewController>
@@ -218,7 +241,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h1i-0B-ICV"/>
-        <segue reference="QnU-kG-AS5"/>
+        <segue reference="0BU-MI-Jw1"/>
+        <segue reference="stg-PP-l4q"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 class SignUp: UIViewController {
 
     @IBOutlet weak var signUp: UIButton!
     
+
     @IBAction func signUp(_ sender: UIButton) {
         self.performSegue(withIdentifier: "backtologin", sender: self)
     }
@@ -23,7 +25,6 @@ class SignUp: UIViewController {
     @IBOutlet weak var groupIDText: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var newgroupButton: UIButton!
-    
     @IBAction func signupnew(_ sender: Any) {
         if emailText.text != "" && passwordText.text != "" && groupIDText.text != ""
         {
@@ -44,6 +45,8 @@ class SignUp: UIViewController {
                     }
                 }
             })
+            
+           
         }
     }
     
