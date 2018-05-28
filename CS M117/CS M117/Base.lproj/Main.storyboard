@@ -171,6 +171,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="c5u-8l-aeS"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FeE-fR-KRa"/>
                     <connections>
                         <outlet property="emailText" destination="274-fX-piy" id="U4d-Fx-YE4"/>
                         <outlet property="groupIDText" destination="DeH-r8-jOQ" id="W1v-gL-pak"/>
@@ -241,7 +242,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0BU-MI-Jw1"/>
-        <segue reference="stg-PP-l4q"/>
+        <segue reference="h1i-0B-ICV"/>
+        <segue reference="QnU-kG-AS5"/>
     </inferredMetricsTieBreakers>
 </document>

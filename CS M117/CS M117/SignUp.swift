@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 class SignUp: UIViewController {
-
+    var ref:DatabaseReference?
     @IBOutlet weak var signUp: UIButton!
     
 
@@ -44,6 +44,9 @@ class SignUp: UIViewController {
                         print ("Error")
                     }
                 }
+                self.ref = Database.database().reference()
+                self.ref?.child("list").childByAutoId().setValue(self.groupIDText.text)
+
             })
             
            
