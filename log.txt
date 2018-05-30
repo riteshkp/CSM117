@@ -1,0 +1,5 @@
+5/29/18 - Ritesh Pendekanti
+-In Task class, added boolean variable called "isCompleted" to determine if task is completed or not. 
+-Created static task page
+-Created add task page 
+    -supports adding task name, points, and date.

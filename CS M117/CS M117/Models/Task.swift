@@ -14,6 +14,7 @@ class Task {
     let taskPoints: Int
     var userID: String
     let deadline: Date
+    var isCompleted: Bool
     
     init()
     {
@@ -21,6 +22,7 @@ class Task {
         self.taskPoints = 0
         self.userID = ""
         self.deadline = Date()
+        self.isCompleted = false
         
     }
     init(taskID: String, taskPoints: Int, deadline: Date)
@@ -29,6 +31,7 @@ class Task {
         self.taskPoints = taskPoints
         self.userID = ""
         self.deadline = deadline
+        self.isCompleted = false
     }
     
     func taskfinished(userID: String)

@@ -18,6 +18,9 @@
 		3FA506FC209D491E0058D9A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA506FA209D491E0058D9A8 /* LaunchScreen.storyboard */; };
 		3FA50704209D4AF20058D9A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FA50703209D4AF20058D9A8 /* GoogleService-Info.plist */; };
 		81BD45F15F19657064E14BB7 /* Pods_CS_M117.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C331B00AA76C62F15C45AEF /* Pods_CS_M117.framework */; };
+		8B537B2F20BDEDB100E59537 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B537B2E20BDEDB100E59537 /* TaskCell.swift */; };
+		8B537B3120BDEF3000E59537 /* TaskPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B537B3020BDEF3000E59537 /* TaskPageViewController.swift */; };
+		8B537B3320BDF9C100E59537 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B537B3220BDF9C100E59537 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		3FA506FD209D491E0058D9A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FA50703209D4AF20058D9A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C331B00AA76C62F15C45AEF /* Pods_CS_M117.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_M117.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B537B2E20BDEDB100E59537 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		8B537B3020BDEF3000E59537 /* TaskPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPageViewController.swift; sourceTree = "<group>"; };
+		8B537B3220BDF9C100E59537 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		995039D914B2198BA6FCAEB3 /* Pods-CS M117.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS M117.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CS M117/Pods-CS M117.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +92,9 @@
 				3F8A575F20A3A77B002034C6 /* SignUp.swift */,
 				3F63837520A3F4A60077197B /* newGroup.swift */,
 				3FA506F5209D491C0058D9A8 /* Main.storyboard */,
+				8B537B3220BDF9C100E59537 /* AddTaskViewController.swift */,
+				8B537B3020BDEF3000E59537 /* TaskPageViewController.swift */,
+				8B537B2E20BDEDB100E59537 /* TaskCell.swift */,
 				3FA506F8209D491E0058D9A8 /* Assets.xcassets */,
 				3FA506FA209D491E0058D9A8 /* LaunchScreen.storyboard */,
 				3FA50703209D4AF20058D9A8 /* GoogleService-Info.plist */,
@@ -250,10 +259,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F63837620A3F4A60077197B /* newGroup.swift in Sources */,
+				8B537B2F20BDEDB100E59537 /* TaskCell.swift in Sources */,
 				3FA506F4209D491C0058D9A8 /* ViewController.swift in Sources */,
 				3F8A576020A3A77B002034C6 /* SignUp.swift in Sources */,
 				3FA506F2209D491C0058D9A8 /* AppDelegate.swift in Sources */,
 				3F8A89E420BBE80800D7F487 /* Task.swift in Sources */,
+				8B537B3120BDEF3000E59537 /* TaskPageViewController.swift in Sources */,
+				8B537B3320BDF9C100E59537 /* AddTaskViewController.swift in Sources */,
 				3F0D691720A15FE9006DBE5C /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FSMEHR8ME;
 				INFOPLIST_FILE = "CS M117/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -418,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FSMEHR8ME;
 				INFOPLIST_FILE = "CS M117/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
