@@ -30,20 +30,18 @@ class AddTaskViewController: UIViewController {
         let userID = Auth.auth().currentUser?.uid
         ref = Database.database().reference()
 
-        var groupname = ""
+        var groupName = ""
         
         ref?.child("Users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
-            let groupnamefake = value?["Group"] as? String ?? ""
-
-            groupname = groupnamefake
+            groupName = value?["Group"] as? String ?? ""
         }) { (error) in
             print(error.localizedDescription)
         }
         
         print ("The Group name is: " )
-        print(groupname)
+        print(groupName)
 
         // my non working data ends here
         
@@ -58,8 +56,8 @@ class AddTaskViewController: UIViewController {
             let stringDate = dateToString(givenDate: deadlineDate!)
 //            let groupID = ""
             print("AGAIN   ")
-            print(groupname)
-            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupname)
+            print(groupName)
+            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupName)
     
 
         }
