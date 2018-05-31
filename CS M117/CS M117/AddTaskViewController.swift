@@ -15,6 +15,9 @@ protocol AddTask {
 }
 
 class AddTaskViewController: UIViewController {
+    var ref:DatabaseReference?
+  
+    
     @IBOutlet weak var taskNameOutlet: UITextField!
     @IBOutlet weak var taskPointsOutlet: UITextField!
     @IBOutlet weak var deadlineOutlet: UITextField!
@@ -22,25 +25,44 @@ class AddTaskViewController: UIViewController {
     let deadlinePicker = UIDatePicker()
     
     @IBAction func addAction(_ sender: Any) {
+        
+        // My non- working data
+        let userID = Auth.auth().currentUser?.email
+        ref = Database.database().reference()
+        // My top posts by number of stars
+        let myTopPostsQuery = (ref?.child("Users"))?.queryOrdered(byChild: "Shrey")
+        // My top posts by number of stars
+        print (myTopPostsQuery)
+        
+        // my non working data ends here
+        
+        
+        
         let taskPoints: Int? = Int(taskPointsOutlet.text!)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let deadlineDate = dateFormatter.date(from: deadlineOutlet.text!)
         if (taskNameOutlet.text != "") && (taskPoints != nil) && (deadlineOutlet.text != "") {
             delegate?.addTask(name: taskNameOutlet.text!, points: taskPoints!, deadline: deadlineDate!)
-            let date = deadlineDate // Get Todays Date
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
-            let stringDate: String = dateFormatter.string(from: date as! Date)
-            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate)
-            
+            let stringDate = dateToString(givenDate: deadlineDate!)
+            let groupID = ""
+            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupID)
+    
 
         }
         navigationController?.popViewController(animated: true)
     }
-    var ref:DatabaseReference?
+//    var ref:DatabaseReference?
 
-    func addToDatabase(name: String, points: Int, deadline: String)
+    func dateToString(givenDate: Date) -> String
+    {
+        let date = givenDate // Get Todays Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let stringDate: String = dateFormatter.string(from: date as! Date)
+        return stringDate
+    }
+    func addToDatabase(name: String, points: Int, deadline: String, group: String)
     {
         var inputs = [String:Any]()
         inputs = ["user": "" , "deadline": deadline, "points": points]

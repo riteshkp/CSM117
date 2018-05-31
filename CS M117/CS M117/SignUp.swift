@@ -48,7 +48,8 @@ class SignUp: UIViewController {
                 // Get a reference to the database service
 //                var database = firebase.database();
                 self.ref = Database.database().reference()
-                self.ref?.child(self.groupIDText.text!).child(self.nameText.text!).setValue(["email": self.emailText.text, "points": 0])
+                self.ref?.child(self.groupIDText.text!).child("Names").setValue(["Name": self.nameText.text])
+                self.ref?.child("Users").child(self.nameText.text!).setValue(["Email": self.emailText.text, "Points": 0, "Group" : self.groupIDText.text!])
             })
             
            
