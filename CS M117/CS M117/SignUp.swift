@@ -19,6 +19,7 @@ class SignUp: UIViewController {
         self.performSegue(withIdentifier: "backtologin", sender: self)
     }
     
+    @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
@@ -26,7 +27,7 @@ class SignUp: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var newgroupButton: UIButton!
     @IBAction func signupnew(_ sender: Any) {
-        if emailText.text != "" && passwordText.text != "" && groupIDText.text != ""
+        if emailText.text != "" && passwordText.text != "" && groupIDText.text != "" && nameText.text != ""
         {
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: {(user, error) in
                 if user != nil
@@ -44,9 +45,10 @@ class SignUp: UIViewController {
                         print ("Error")
                     }
                 }
+                // Get a reference to the database service
+//                var database = firebase.database();
                 self.ref = Database.database().reference()
-                self.ref?.child("list").childByAutoId().setValue(self.groupIDText.text)
-
+                self.ref?.child(self.groupIDText.text!).child(self.nameText.text!).setValue(["email": self.emailText.text, "points": 0])
             })
             
            
