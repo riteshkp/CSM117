@@ -27,21 +27,15 @@ class AddTaskViewController: UIViewController {
     @IBAction func addAction(_ sender: Any) {
         
         // My non- working data
-        let userID = Auth.auth().currentUser?.uid
+        guard let userID = Auth.auth().currentUser?.uid else {return}
         ref = Database.database().reference()
 
-        var groupName = ""
+//        var groupName = ""
         
-        ref?.child("Users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            groupName = value?["Group"] as? String ?? ""
-        }) { (error) in
-            print(error.localizedDescription)
-        }
         
-        print ("The Group name is: " )
-        print(groupName)
+        
+//        print ("The Group name is: " )
+//        print(groupName)
 
         // my non working data ends here
         
@@ -55,10 +49,18 @@ class AddTaskViewController: UIViewController {
             delegate?.addTask(name: taskNameOutlet.text!, points: taskPoints!, deadline: deadlineDate!)
             let stringDate = dateToString(givenDate: deadlineDate!)
 //            let groupID = ""
-            print("AGAIN   ")
-            print(groupName)
-            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupName)
-    
+//            print("AGAIN   ")
+//            print(groupName)
+            ref?.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                var groupName = value?["Group"] as? String ?? ""
+                self.addToDatabase(name: self.taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupName)
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
 
         }
         navigationController?.popViewController(animated: true)
