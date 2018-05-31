@@ -56,12 +56,8 @@ class SignUp: UIViewController {
     }
     
     
-    @IBOutlet weak var newgroup: UIButton!
     
-    @IBAction func newgroup(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "newgroup", sender: self)
-    }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

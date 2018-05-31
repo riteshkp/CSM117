@@ -293,14 +293,6 @@
                                     <action selector="signupnew:" destination="sFm-n0-Dtd" eventType="touchUpInside" id="Rgc-i7-ed2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8m-8W-ITt">
-                                <rect key="frame" x="67" y="527" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Don't have a group yet?"/>
-                                <connections>
-                                    <action selector="newgroup:" destination="sFm-n0-Dtd" eventType="touchUpInside" id="Ad0-Yu-uVx"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Etx-Dm-4fD">
                                 <rect key="frame" x="67" y="135" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -331,70 +323,15 @@
                         <outlet property="emailText" destination="274-fX-piy" id="U4d-Fx-YE4"/>
                         <outlet property="groupIDText" destination="DeH-r8-jOQ" id="W1v-gL-pak"/>
                         <outlet property="nameText" destination="Etx-Dm-4fD" id="i9n-aP-ela"/>
-                        <outlet property="newgroup" destination="q8m-8W-ITt" id="DBy-5J-0Da"/>
-                        <outlet property="newgroupButton" destination="q8m-8W-ITt" id="hde-S5-SBm"/>
                         <outlet property="passwordText" destination="cwL-gE-eP5" id="tkg-uk-25f"/>
                         <outlet property="signUp" destination="VPj-ei-5SE" id="bXx-TL-9gK"/>
                         <outlet property="signupButton" destination="eAc-f0-8UQ" id="Q2U-BP-ld8"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backtologin" id="QnU-kG-AS5"/>
-                        <segue destination="MSj-HW-saX" kind="show" identifier="newgroup" id="4W8-vJ-ZAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxm-H0-wug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="784.79999999999995" y="31.934032983508249"/>
-        </scene>
-        <!--New Group-->
-        <scene sceneID="i4O-gh-bXF">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BAw-Au-dJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="MSj-HW-saX" customClass="newGroup" customModule="CS_M117" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Je-DU-0Gv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="new group page" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fj9-PH-d6n">
-                                <rect key="frame" x="67" y="115" width="240" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-vY-fhq">
-                                <rect key="frame" x="43" y="48" width="143" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="backtosignup:" destination="MSj-HW-saX" eventType="touchUpInside" id="P7U-hH-EmR"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="04I-lH-1Es">
-                                <rect key="frame" x="84" y="232" width="223" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPU-or-Cua">
-                                <rect key="frame" x="100" y="331" width="187" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Group"/>
-                                <connections>
-                                    <action selector="creategroup:" destination="MSj-HW-saX" eventType="touchUpInside" id="F2B-1D-x6c"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="RLz-FO-8JM"/>
-                    </view>
-                    <connections>
-                        <outlet property="backToSignUp" destination="DFQ-vY-fhq" id="gCJ-gZ-vwF"/>
-                        <outlet property="groupIDText" destination="04I-lH-1Es" id="45A-Zu-quR"/>
-                        <segue destination="sFm-n0-Dtd" kind="show" identifier="backsignup" id="0BU-MI-Jw1"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1564" y="31.934032983508249"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qsX-cf-0yC">
@@ -419,7 +356,6 @@
         <image name="checkBoxOUTLINE " width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0BU-MI-Jw1"/>
         <segue reference="QnU-kG-AS5"/>
     </inferredMetricsTieBreakers>
 </document>
