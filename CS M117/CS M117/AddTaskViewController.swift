@@ -27,13 +27,24 @@ class AddTaskViewController: UIViewController {
     @IBAction func addAction(_ sender: Any) {
         
         // My non- working data
-        let userID = Auth.auth().currentUser?.email
+        let userID = Auth.auth().currentUser?.uid
         ref = Database.database().reference()
-        // My top posts by number of stars
-        let myTopPostsQuery = (ref?.child("Users"))?.queryOrdered(byChild: "Shrey")
-        // My top posts by number of stars
-        print (myTopPostsQuery)
+
+        var groupname = ""
         
+        ref?.child("Users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let groupnamefake = value?["Group"] as? String ?? ""
+
+            groupname = groupnamefake
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        print ("The Group name is: " )
+        print(groupname)
+
         // my non working data ends here
         
         
@@ -45,8 +56,10 @@ class AddTaskViewController: UIViewController {
         if (taskNameOutlet.text != "") && (taskPoints != nil) && (deadlineOutlet.text != "") {
             delegate?.addTask(name: taskNameOutlet.text!, points: taskPoints!, deadline: deadlineDate!)
             let stringDate = dateToString(givenDate: deadlineDate!)
-            let groupID = ""
-            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupID)
+//            let groupID = ""
+            print("AGAIN   ")
+            print(groupname)
+            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupname)
     
 
         }
@@ -65,7 +78,7 @@ class AddTaskViewController: UIViewController {
     func addToDatabase(name: String, points: Int, deadline: String, group: String)
     {
         var inputs = [String:Any]()
-        inputs = ["user": "" , "deadline": deadline, "points": points]
+        inputs = ["user": "" , "deadline": deadline, "points": points, "Group": group]
         ref = Database.database().reference()
         ref?.child("Tasks").child(name).setValue(inputs)
     }
