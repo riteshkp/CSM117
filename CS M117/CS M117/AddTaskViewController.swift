@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 protocol AddTask {
     func addTask(name: String, points: Int, deadline: Date)
 }
@@ -26,8 +28,24 @@ class AddTaskViewController: UIViewController {
         let deadlineDate = dateFormatter.date(from: deadlineOutlet.text!)
         if (taskNameOutlet.text != "") && (taskPoints != nil) && (deadlineOutlet.text != "") {
             delegate?.addTask(name: taskNameOutlet.text!, points: taskPoints!, deadline: deadlineDate!)
+            let date = deadlineDate // Get Todays Date
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            let stringDate: String = dateFormatter.string(from: date as! Date)
+            addToDatabase(name: taskNameOutlet.text!, points: taskPoints!, deadline: stringDate)
+            
+
         }
         navigationController?.popViewController(animated: true)
+    }
+    var ref:DatabaseReference?
+
+    func addToDatabase(name: String, points: Int, deadline: String)
+    {
+        var inputs = [String:Any]()
+        inputs = ["user": "" , "deadline": deadline, "points": points]
+        ref = Database.database().reference()
+        ref?.child("Tasks").child(name).setValue(inputs)
     }
     
     var delegate: AddTask?
