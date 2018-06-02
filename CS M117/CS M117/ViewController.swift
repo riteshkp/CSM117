@@ -43,6 +43,10 @@ class ViewController: UIViewController {
                     }
                 })
         }
+        else
+        {
+            self.createAlertFail(title: "Try again!", message: "Please enter Email and Password")
+        }
     }
     
     func createAlertFail (title:String, message:String)
