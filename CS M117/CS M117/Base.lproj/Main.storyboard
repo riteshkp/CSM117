@@ -214,6 +214,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lV-Cv-3Uh">
+                                <rect key="frame" x="0.0" y="20" width="72" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="sMx-4p-Jc7" eventType="touchUpInside" id="9bH-ME-9Mr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="h4T-3W-sk0"/>
@@ -223,6 +231,7 @@
                         <outlet property="taskNameOutlet" destination="RvN-Pe-MN7" id="9a3-X9-vbd"/>
                         <outlet property="taskPointsOutlet" destination="ci9-qs-7Uq" id="55Y-tr-mFf"/>
                         <segue destination="aHU-Ma-732" kind="show" identifier="addedTask" id="fSj-zE-vIB"/>
+                        <segue destination="aHU-Ma-732" kind="show" identifier="backTask" id="OCF-18-ZmF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3T-d7-T9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -322,7 +331,7 @@
         <image name="checkBoxOUTLINE " width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fSj-zE-vIB"/>
+        <segue reference="OCF-18-ZmF"/>
         <segue reference="aEN-ar-A5y"/>
     </inferredMetricsTieBreakers>
 </document>

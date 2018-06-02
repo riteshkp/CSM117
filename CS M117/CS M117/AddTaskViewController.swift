@@ -17,6 +17,9 @@ protocol AddTask {
 class AddTaskViewController: UIViewController {
     var ref:DatabaseReference?
   
+    @IBAction func back(_ sender: Any) {
+        self.performSegue(withIdentifier: "backTask", sender: self)
+    }
     
     @IBOutlet weak var taskNameOutlet: UITextField!
     @IBOutlet weak var taskPointsOutlet: UITextField!
