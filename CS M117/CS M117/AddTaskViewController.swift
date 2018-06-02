@@ -61,10 +61,13 @@ class AddTaskViewController: UIViewController {
             self.createAlert(title: "Success!", message: "")
 
         }
-        
+        else if(!(deadlineOutlet.text != ""))
+        {
+            self.createAlertFail(title: "Try again!", message: "fill in all fields")
+        }
         else if(!(taskPoints != nil))
         {
-            self.createAlertFail(title: "Try again!", message: "only numbers for task points")
+            self.createAlertFail(title: "Try again!", message: "please enter only numbers for task points")
         }
         else
         {
