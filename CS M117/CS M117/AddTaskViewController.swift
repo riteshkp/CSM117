@@ -36,7 +36,13 @@ class AddTaskViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let deadlineDate = dateFormatter.date(from: deadlineOutlet.text!)
-        if (taskNameOutlet.text != "") && (taskPoints != nil) && (deadlineOutlet.text != "") {
+        
+        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ")
+        
+        if taskNameOutlet.text?.rangeOfCharacter(from: characterset.inverted) != nil {
+            self.createAlertFail(title: "Try again!", message: "only alphanumeric characters are allowed for task name")
+        }
+        else if (taskNameOutlet.text != "") && (taskPoints != nil) && (deadlineOutlet.text != "") {
             delegate?.addTask(name: taskNameOutlet.text!, points: taskPoints!, deadline: deadlineDate!)
             let stringDate = dateToString(givenDate: deadlineDate!)
             ref?.child("USERS").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
