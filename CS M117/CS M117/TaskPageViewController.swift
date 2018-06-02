@@ -18,6 +18,11 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
 
+    @IBAction func plus(_ sender: Any) {
+        self.performSegue(withIdentifier: "addTask", sender: self)
+    }
+    
+    
     @IBAction func signOut(_ sender: Any) {
         print("Did it work???")
         try! Auth.auth().signOut()

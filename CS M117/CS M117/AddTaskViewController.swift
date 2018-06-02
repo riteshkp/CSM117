@@ -24,23 +24,13 @@ class AddTaskViewController: UIViewController {
     
     let deadlinePicker = UIDatePicker()
     
-    @IBAction func addAction(_ sender: Any) {
+    @IBAction func addAction(_ sender: Any)
+    {
         
         // My non- working data
         guard let userID = Auth.auth().currentUser?.uid else {return}
         ref = Database.database().reference()
 
-//        var groupName = ""
-        
-        
-        
-//        print ("The Group name is: " )
-//        print(groupName)
-
-        // my non working data ends here
-        
-        
-        
         let taskPoints: Int? = Int(taskPointsOutlet.text!)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -48,9 +38,6 @@ class AddTaskViewController: UIViewController {
         if (taskNameOutlet.text != "") && (taskPoints != nil) && (deadlineOutlet.text != "") {
             delegate?.addTask(name: taskNameOutlet.text!, points: taskPoints!, deadline: deadlineDate!)
             let stringDate = dateToString(givenDate: deadlineDate!)
-//            let groupID = ""
-//            print("AGAIN   ")
-//            print(groupName)
             ref?.child("USERS").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 let value = snapshot.value as? NSDictionary
@@ -60,6 +47,7 @@ class AddTaskViewController: UIViewController {
             }) { (error) in
                 print(error.localizedDescription)
             }
+            self.performSegue(withIdentifier: "addedTask", sender: self)
             
 
         }
