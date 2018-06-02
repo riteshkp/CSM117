@@ -62,48 +62,12 @@
                         <outlet property="emailText" destination="noe-Ov-o99" id="AI6-Xc-nJd"/>
                         <outlet property="passwordText" destination="fC2-6e-NWz" id="Eis-yJ-xaX"/>
                         <outlet property="signUpButton" destination="ENy-f8-N8a" id="u2a-7q-h9D"/>
-                        <segue destination="xDX-sB-3Ti" kind="show" identifier="segue" id="ijW-kh-Xnx"/>
                         <segue destination="sFm-n0-Dtd" kind="show" identifier="signup" id="h1i-0B-ICV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
-        </scene>
-        <!--View Controller2-->
-        <scene sceneID="uYi-IU-HeU">
-            <objects>
-                <viewController id="xDX-sB-3Ti" customClass="ViewController2" customModule="CS_M117" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HJV-et-82r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdt-qU-c8V">
-                                <rect key="frame" x="119" y="264" width="136" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="action:" destination="xDX-sB-3Ti" eventType="touchUpInside" id="uSx-fa-BfV"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="welcome, the user who just signed up!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-Vf-nDO">
-                                <rect key="frame" x="57" y="170" width="260" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="JU6-aM-atQ"/>
-                    </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segue2" id="stg-PP-l4q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I2L-BJ-a3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="887.40629685157433"/>
         </scene>
         <!--Task Page View Controller-->
         <scene sceneID="eax-rk-Ce5">
@@ -355,7 +319,4 @@
     <resources>
         <image name="checkBoxOUTLINE " width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="QnU-kG-AS5"/>
-    </inferredMetricsTieBreakers>
 </document>
