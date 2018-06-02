@@ -164,6 +164,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import UIKit;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -181,6 +182,22 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class UITextField;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC7CS_M11721AddTaskViewController")
+@interface AddTaskViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified taskNameOutlet;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified taskPointsOutlet;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified deadlineOutlet;
+- (IBAction)addAction:(id _Nonnull)sender;
+- (void)viewDidLoad;
+- (void)donePressed;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIWindow;
 @class UIApplication;
 
@@ -196,11 +213,59 @@ SWIFT_CLASS("_TtC7CS_M11711AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
-@class NSCoder;
+@class UIButton;
+
+SWIFT_CLASS("_TtC7CS_M1176SignUp")
+@interface SignUp : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified signUp;
+- (IBAction)signUp:(UIButton * _Nonnull)sender;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified nameText;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailText;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordText;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified groupIDText;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified signupButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified newgroupButton;
+- (IBAction)signupnew:(id _Nonnull)sender;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UILabel;
+
+SWIFT_CLASS("_TtC7CS_M1178TaskCell")
+@interface TaskCell : UITableViewCell
+- (IBAction)checkBoxAction:(id _Nonnull)sender;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified checkBoxOutlet;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified taskNameLabel;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+
+SWIFT_CLASS("_TtC7CS_M11722TaskPageViewController")
+@interface TaskPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+- (void)viewDidLoad;
+- (IBAction)plus:(id _Nonnull)sender;
+- (IBAction)signOut:(id _Nonnull)sender;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC7CS_M11714ViewController")
 @interface ViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailText;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordText;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified actionButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified signUpButton;
+- (IBAction)action:(UIButton * _Nonnull)sender;
+- (IBAction)signUp:(UIButton * _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
