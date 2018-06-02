@@ -27,7 +27,7 @@
                                 </state>
                                 <connections>
                                     <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iIn-o4-jXX"/>
-                                    <segue destination="Su5-au-cb9" kind="modal" id="mzw-yU-jXf"/>
+                                    <segue destination="Su5-au-cb9" kind="modal" identifier="segue" id="mzw-yU-jXf"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noe-Ov-o99">
