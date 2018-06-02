@@ -35,6 +35,10 @@ class SignUp: UIViewController {
                 {
                     print("Success")
                     success = 1
+                    self.ref = Database.database().reference()
+                    let userID = Auth.auth().currentUser?.uid
+                    self.ref?.child("GROUPS").child(self.groupIDText.text!).child(userID!).setValue(["ID": userID, "Name": self.nameText.text])
+                    self.ref?.child("USERS").child(userID!).setValue(["Name": self.nameText.text!, "Email": self.emailText.text, "Points": 0, "Group" : self.groupIDText.text!])
                 }
                 else
                 {
@@ -52,10 +56,7 @@ class SignUp: UIViewController {
                 }
                 // Get a reference to the database service
 //                var database = firebase.database();
-                self.ref = Database.database().reference()
-                let userID = Auth.auth().currentUser?.uid
-                self.ref?.child(self.groupIDText.text!).child(userID!).setValue(["ID": userID, "Name": self.nameText.text])
-                self.ref?.child("Users").child(userID!).setValue(["Name": self.nameText.text!, "Email": self.emailText.text, "Points": 0, "Group" : self.groupIDText.text!])
+                
                 if (success == 1)
                 {
                     self.createAlert(title: "Success!", message: "")

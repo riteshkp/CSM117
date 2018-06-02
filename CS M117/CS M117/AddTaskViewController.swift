@@ -51,7 +51,7 @@ class AddTaskViewController: UIViewController {
 //            let groupID = ""
 //            print("AGAIN   ")
 //            print(groupName)
-            ref?.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("USERS").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 let value = snapshot.value as? NSDictionary
                 var groupName = value?["Group"] as? String ?? ""
