@@ -43,7 +43,7 @@ class ViewController: UIViewController {
                     }
                 })
         }
-        else //if blank 
+        else //if blank show popup
         {
             self.createAlertFail(title: "Try again!", message: "Please enter Email and Password")
         }
