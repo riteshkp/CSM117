@@ -32,6 +32,7 @@ class AddTaskViewController: UIViewController {
         ref = Database.database().reference()
 
         let taskPoints: Int? = Int(taskPointsOutlet.text!)
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let deadlineDate = dateFormatter.date(from: deadlineOutlet.text!)
@@ -43,8 +44,7 @@ class AddTaskViewController: UIViewController {
                 let value = snapshot.value as? NSDictionary
                 var groupName = value?["Group"] as? String ?? ""
                 self.addToDatabase(name: self.taskNameOutlet.text!, points: taskPoints!, deadline: stringDate, group: groupName)
-                
-                
+
             }) { (error) in
                 print(error.localizedDescription)
             }
@@ -52,9 +52,22 @@ class AddTaskViewController: UIViewController {
             self.createAlert(title: "Success!", message: "")
 
         }
+        
+        else if(!(taskPoints != nil))
+        {
+            self.createAlertFail(title: "Try again!", message: "only numbers for task points")
+        }
+        else
+        {
+            self.createAlertFail(title: "Try again!", message: "fill in all fields")
+        }
         navigationController?.popViewController(animated: true)
     }
 //    var ref:DatabaseReference?
+    
+    func isStringAnInt(string: String) -> Bool {
+        return Int(string) != nil
+    }
 
     func dateToString(givenDate: Date) -> String
     {
@@ -101,6 +114,21 @@ class AddTaskViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    func createAlertFail (title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+   
     
     @objc func donePressed(){
         let dateFormatter = DateFormatter()
