@@ -25,13 +25,15 @@ class ViewController: UIViewController {
                     if user != nil          //user exists, and sign in successful
                     {
                         self.performSegue(withIdentifier: "signedIn", sender: self)    // the withIdentifier is segue too because we names the switch from one screen to the other as segue
-                        print("Log in Sucess")
+                        print("Log in Success")
                     }
                     else                    // user not available, going to print error messages
                     {
                         if let myError = error?.localizedDescription        // generic error messages, if available
                         {
                             print (myError)
+                            self.createAlertFail(title: "Try again!", message: myError)
+
                         }
                         else                // no generic messages error, so print my message
                         {
@@ -41,6 +43,19 @@ class ViewController: UIViewController {
                     }
                 })
         }
+    }
+    
+    func createAlertFail (title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
 //            else                                                // sign up user
 //            {
