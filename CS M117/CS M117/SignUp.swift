@@ -33,6 +33,7 @@ class SignUp: UIViewController {
                 if user != nil
                 {
                     print("Sucess")
+                    self.createAlert(title: "Sucess!", message: "Go back to the Logon page to enter!")
                 }
                 else
                 {
@@ -72,6 +73,19 @@ class SignUp: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //popup text function
+    func createAlert (title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 
     /*
     // MARK: - Navigation
