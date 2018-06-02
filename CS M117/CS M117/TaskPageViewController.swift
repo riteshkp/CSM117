@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 class TaskPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask, ChangeButton {
     
     var tasks: [Task] = []
@@ -16,6 +18,11 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
 
+    @IBAction func signOut(_ sender: Any) {
+        print("Did it work???")
+        try! Auth.auth().signOut()
+        performSegue(withIdentifier: "segue2", sender: self)
+    }
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,10 +43,11 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddTaskViewController
-        vc.delegate = self
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+////        let vc = segue.destination as! ViewController
+//        let vc = segue.destination as! AddTaskViewController
+//        vc.delegate = self
+//    }
     
     func addTask(name: String, points: Int, deadline: Date) {
         tasks.append(Task(taskID: name, taskPoints: points, deadline: deadline))
