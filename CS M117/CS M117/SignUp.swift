@@ -29,21 +29,25 @@ class SignUp: UIViewController {
     @IBAction func signupnew(_ sender: Any) {
         if emailText.text != "" && passwordText.text != "" && groupIDText.text != "" && nameText.text != ""
         {
+            var success = 0
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: {(user, error) in
                 if user != nil
                 {
-                    print("Sucess")
-                    self.createAlert(title: "Sucess!", message: "Go back to the Logon page to enter!")
+                    print("Success")
+                    success = 1
                 }
                 else
                 {
                     if let myError = error?.localizedDescription        // generic error messages, if available
                     {
                         print (myError)
+                        self.createAlertFail(title: "Try Again!", message: myError)
+
                     }
                     else                // no generic messages error, so print my message
                     {
                         print ("Error")
+                        self.createAlertFail(title: "Try Again!", message: "Error")
                     }
                 }
                 // Get a reference to the database service
@@ -52,9 +56,16 @@ class SignUp: UIViewController {
                 let userID = Auth.auth().currentUser?.uid
                 self.ref?.child(self.groupIDText.text!).child(userID!).setValue(["ID": userID, "Name": self.nameText.text])
                 self.ref?.child("Users").child(userID!).setValue(["Name": self.nameText.text!, "Email": self.emailText.text, "Points": 0, "Group" : self.groupIDText.text!])
+                if (success == 1)
+                {
+                    self.createAlert(title: "Success!", message: "")
+                   // self.performSegue(withIdentifier: "backtologin", sender: self)
+                }
             })
-            
-           
+        }
+        else
+        {
+            createAlertFail(title: "Try Again!", message: "Fill in all areas")
         }
     }
     
@@ -74,18 +85,35 @@ class SignUp: UIViewController {
     }
     
     
-    //popup text function
+    //popup text function for successful signup
     func createAlert (title:String, message:String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            
+           // alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "backtologin", sender: self)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    //popup for failed signup
+    func createAlertFail (title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            
             alert.dismiss(animated: true, completion: nil)
         }))
         
         self.present(alert, animated: true, completion: nil)
         
     }
+    
 
     /*
     // MARK: - Navigation
