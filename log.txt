@@ -3,3 +3,7 @@
 -Created static task page
 -Created add task page 
     -supports adding task name, points, and date.
+6/3/18 - Ritesh Pendekanti
+-Created leaderboard page 
+-loading of data onto leaderboard page
+-fixed bug of editable text on new user page. Changed it to label.

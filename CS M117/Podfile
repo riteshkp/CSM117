@@ -10,5 +10,4 @@ target 'CS M117' do
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Database'
 
-
 end
