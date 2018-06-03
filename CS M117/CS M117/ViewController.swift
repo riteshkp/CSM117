@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var actionButton: UIButton!
     
+    @IBAction func signup(_ sender: Any) {
+        self.performSegue(withIdentifier: "signup", sender: self)
+    }
+    
     @IBOutlet weak var signUpButton: UIButton!
     @IBAction func action(_ sender: UIButton)
     {
@@ -84,9 +88,6 @@ class ViewController: UIViewController {
 //        }
 //    }
     
-    @IBAction func signUp(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "signup", sender: self)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

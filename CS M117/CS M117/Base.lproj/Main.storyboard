@@ -36,15 +36,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENy-f8-N8a">
-                                <rect key="frame" x="64" y="465" width="246" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="New user? Sign up"/>
-                                <connections>
-                                    <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwj-FQ-30l"/>
-                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ctT-LI-VJ3"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC2-6e-NWz">
                                 <rect key="frame" x="64" y="251" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,6 +43,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5b-3e-Ont">
+                                <rect key="frame" x="161" y="461" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign up"/>
+                                <connections>
+                                    <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kSp-Np-gcU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -60,14 +59,13 @@
                         <outlet property="actionButton" destination="Hqf-gt-rct" id="z87-YJ-cib"/>
                         <outlet property="emailText" destination="noe-Ov-o99" id="AI6-Xc-nJd"/>
                         <outlet property="passwordText" destination="fC2-6e-NWz" id="Eis-yJ-xaX"/>
-                        <outlet property="signUpButton" destination="ENy-f8-N8a" id="u2a-7q-h9D"/>
                         <segue destination="sFm-n0-Dtd" kind="show" identifier="signup" id="h1i-0B-ICV"/>
                         <segue destination="aHU-Ma-732" kind="show" identifier="signedIn" id="1Sb-aR-hJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
+            <point key="canvasLocation" x="-58" y="11"/>
         </scene>
         <!--Leaderboard View Controller-->
         <scene sceneID="WzB-79-ckf">
@@ -77,6 +75,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9B-4n-mx8">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="aHU-Ma-732" kind="show" id="f8u-Yo-dFb"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5G-WV-xjp">
                                 <rect key="frame" x="0.0" y="58" width="375" height="609"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,14 +122,6 @@
                                     <outlet property="delegate" destination="TS1-MN-mZp" id="J8m-Lh-Dpg"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9B-4n-mx8">
-                                <rect key="frame" x="16" y="20" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="aHU-Ma-732" kind="show" id="f8u-Yo-dFb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="z87-Ey-mrY"/>
@@ -134,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSn-C4-j2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704.79999999999995" y="876.61169415292363"/>
+            <point key="canvasLocation" x="-58" y="843"/>
         </scene>
         <!--Task Page View Controller-->
         <scene sceneID="eax-rk-Ce5">
@@ -235,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpA-w6-y5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752.8" y="883.80809595202402"/>
+            <point key="canvasLocation" x="785" y="845"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="Vzo-xE-R0C">
@@ -311,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3T-d7-T9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536.8000000000002" y="883.80809595202402"/>
+            <point key="canvasLocation" x="1585" y="844"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="50B-JB-qZu">
@@ -399,14 +397,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxm-H0-wug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784.79999999999995" y="31.934032983508249"/>
+            <point key="canvasLocation" x="785" y="12"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkBoxOUTLINE " width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f8u-Yo-dFb"/>
-        <segue reference="aEN-ar-A5y"/>
+        <segue reference="1Sb-aR-hJn"/>
+        <segue reference="QnU-kG-AS5"/>
     </inferredMetricsTieBreakers>
 </document>
