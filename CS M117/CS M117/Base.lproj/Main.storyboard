@@ -116,6 +116,14 @@
                                     <outlet property="delegate" destination="TS1-MN-mZp" id="J8m-Lh-Dpg"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9B-4n-mx8">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="aHU-Ma-732" kind="show" id="f8u-Yo-dFb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="z87-Ey-mrY"/>
@@ -398,7 +406,7 @@
         <image name="checkBoxOUTLINE " width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Sb-aR-hJn"/>
+        <segue reference="f8u-Yo-dFb"/>
         <segue reference="aEN-ar-A5y"/>
     </inferredMetricsTieBreakers>
 </document>
