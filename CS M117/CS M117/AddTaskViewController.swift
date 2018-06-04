@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+
 protocol AddTask {
     func addTask(name: String, points: Int, deadline: Date)
 }
