@@ -56,8 +56,8 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
                 }
                 
                 for user in results1 {
-                    let finalUser = self.dataBaseRef.child("USERS/" + user.id!)
-                    finalUser.observe(.value, with: { (snapshot) in
+                    let usersInGroup = self.dataBaseRef.child("USERS/" + user.id!)
+                    usersInGroup.observe(.value, with: { (snapshot) in
                         let userFound = User(snapshot: snapshot)    //Gets user scores
                         results2.append(userFound)
                         self.users = results2

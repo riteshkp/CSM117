@@ -13,9 +13,14 @@ import FirebaseDatabase
 class TaskPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddTask, ChangeButton {
     
     var tasks: [Task] = []
+    var loadedTasks: [DatabaseTask] = [] //For tasks loaded from database
+    
+    var dataBaseRef: DatabaseReference! {
+        return Database.database().reference()
+    }
     
     override func viewDidLoad() {
-        
+        fetchTasks()
     }
 
     @IBAction func plus(_ sender: Any) {
@@ -31,20 +36,20 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count  //makes table view size of how many tasks there are.
+        return loadedTasks.count  //makes table view size of how many tasks there are.
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
-        cell.taskNameLabel.text = tasks[indexPath.row].taskID   //sets label in cell to task ID.
-        if tasks[indexPath.row].isCompleted{//Sets checkbox accordingly
+        cell.configureCell(tasks: loadedTasks[indexPath.row])
+        /*if tasks[indexPath.row].isCompleted{//Sets checkbox accordingly
             cell.checkBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "checkBoxFILLED-1"), for: UIControlState.normal)
         } else {
             cell.checkBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "checkBoxOUTLINE "), for: UIControlState.normal)
-        }
+        }*/
         cell.delegate = self
         cell.indexP = indexPath.row
-        cell.tasks = tasks
+        cell.loadedTasks = loadedTasks
         return cell
     }
     
@@ -64,5 +69,32 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.reloadData()
     }
     
+    func fetchTasks() {
+        let userRef = dataBaseRef.child("USERS/\(Auth.auth().currentUser!.uid)")    //get user info
+        userRef.observe(.value) { (snapshot) in
+            
+            let user = User(snapshot: snapshot)
+            let userGroup = user.group! //get group user belongs to
+            let taskRef = self.dataBaseRef.child("Tasks")
+            
+            taskRef.observe(.value, with: { (snapshot) in
+                
+                var results = [DatabaseTask]()
+                
+                for tasks in snapshot.children {
+                    results.append(DatabaseTask(snapshot: tasks as! DataSnapshot))   //Gets all tasks
+                }
+                
+                for tasks in results {
+                    if tasks.Group == userGroup {
+                        self.loadedTasks.append(tasks)
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
 }
 

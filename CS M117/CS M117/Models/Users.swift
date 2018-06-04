@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 struct User{
     var name: String!
-    //var points: Int?
     var ref: DatabaseReference!
     var key: String?
     var group: String?
