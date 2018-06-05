@@ -53,6 +53,46 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete
+        {
+            let userRef = dataBaseRef.child("USERS/\(Auth.auth().currentUser!.uid)")    //get user info
+            userRef.observe(.value) { (snapshot) in
+                
+                let user = User(snapshot: snapshot)
+                let userPoints = user.points! //get user points
+                let addpoints: Int? = self.loadedTasks[indexPath.row].points
+                let newpoints = userPoints + addpoints!; //add points from this task
+                
+               // print(tasks.(indexPath).points)
+              //  print(indexPath.row)
+              //  print( self.tasks[indexPath.row] )
+                
+              //  userRef = Database.database().reference()
+                //user.ref.child("Points").setValue(newpoints)
+                //child("Points").setValue(newpoints)
+                user.ref.updateChildValues(["Points":newpoints]) //changes user points in database
+                
+                
+                //remove in database
+                //print(self.loadedTasks[indexPath.row].ref)
+                //let ref = self.dataBaseRef.child("Tasks").child(self.loadedTasks[indexPath.row].ref).removeValue()
+                
+                self.loadedTasks[indexPath.row].ref.removeValue() //remove task from database
+                self.loadedTasks.remove(at: indexPath.row) //remove task from tableview
+                
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+              //  tableView.reloadData()
+
+            }
+            
+           
+            //remove task from database
+            
+        }
+    }
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let vc = segue.destination as! ViewController
 //        let vc = segue.destination as! AddTaskViewController
@@ -64,10 +104,16 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.reloadData()
     }
     
+//    func changeButton(checked: Bool, index: Int?) {
+//        tasks[index!].isCompleted = checked
+//        tableView.reloadData()
+//    }
+    
     func changeButton(checked: Bool, index: Int?) {
-        tasks[index!].isCompleted = checked
-        tableView.reloadData()
+        
     }
+    
+    
     
     func fetchTasks() {
         let userRef = dataBaseRef.child("USERS/\(Auth.auth().currentUser!.uid)")    //get user info
@@ -96,5 +142,7 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
             })
         }
     }
+
 }
+
 
