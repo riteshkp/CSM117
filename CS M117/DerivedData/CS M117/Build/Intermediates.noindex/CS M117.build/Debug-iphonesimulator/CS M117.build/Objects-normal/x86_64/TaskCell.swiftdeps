@@ -13,232 +13,312 @@ provides-dynamic-lookup:
 - "checkBoxOutlet"
 - "taskNameLabel"
 depends-top-level:
+- !private "=="
+- "AssignmentPrecedence"
 - "Bool"
 - !private "BooleanLiteralType"
 - "ChangeButton"
+- "DatabaseTask"
 - "Int"
-- "Task"
+- !private "StringLiteralType"
 - "TaskCell"
 - "UIButton"
 - "UILabel"
 - "UITableViewCell"
 depends-member:
 - !private ["Sa", "subscript"]
-- !private ["s10ArraySliceV", "isCompleted"]
-- !private ["s23BidirectionalCollectionP", "isCompleted"]
+- !private ["s10ArraySliceV", "user"]
+- !private ["s23BidirectionalCollectionP", "init"]
 - !private ["s23BidirectionalCollectionP", "subscript"]
+- !private ["s23BidirectionalCollectionP", "user"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["So15CALayerDelegateP", ""]
 - !private ["So15CALayerDelegateP", "delegate"]
 - !private ["So15CALayerDelegateP", "indexP"]
 - !private ["So15CALayerDelegateP", "init"]
-- !private ["So15CALayerDelegateP", "tasks"]
+- !private ["So15CALayerDelegateP", "loadedTasks"]
+- !private ["So15CALayerDelegateP", "taskNameLabel"]
+- !private ["So15CALayerDelegateP", "text"]
 - ["s7CVarArgP", ""]
 - !private ["s7CVarArgP", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "indexP"]
 - !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "loadedTasks"]
 - !private ["s7CVarArgP", "subscript"]
-- !private ["s7CVarArgP", "tasks"]
+- !private ["s7CVarArgP", "taskNameLabel"]
+- !private ["s7CVarArgP", "text"]
 - ["7CS_M11712ChangeButtonP", "Bool"]
 - ["7CS_M11712ChangeButtonP", "Int"]
 - ["7CS_M11712ChangeButtonP", "changeButton"]
-- !private ["s10CollectionP", "isCompleted"]
+- !private ["s10CollectionP", "init"]
 - !private ["s10CollectionP", "subscript"]
+- !private ["s10CollectionP", "user"]
+- !private ["s10ComparableP", "init"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "indexP"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
-- !private ["s28CustomDebugStringConvertibleP", "isCompleted"]
+- !private ["s28CustomDebugStringConvertibleP", "loadedTasks"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
-- !private ["s28CustomDebugStringConvertibleP", "tasks"]
+- !private ["s28CustomDebugStringConvertibleP", "taskNameLabel"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "user"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
-- !private ["s17CustomReflectableP", "isCompleted"]
+- !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "subscript"]
+- !private ["s17CustomReflectableP", "user"]
 - ["s23CustomStringConvertibleP", ""]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "indexP"]
 - !private ["s23CustomStringConvertibleP", "init"]
-- !private ["s23CustomStringConvertibleP", "isCompleted"]
+- !private ["s23CustomStringConvertibleP", "loadedTasks"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
-- !private ["s23CustomStringConvertibleP", "tasks"]
+- !private ["s23CustomStringConvertibleP", "taskNameLabel"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "user"]
+- !private ["7CS_M11712DatabaseTaskV", "key"]
+- !private ["7CS_M11712DatabaseTaskV", "user"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "subscript"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "subscript"]
 - ["s9EquatableP", ""]
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "delegate"]
 - !private ["s9EquatableP", "indexP"]
 - !private ["s9EquatableP", "init"]
-- !private ["s9EquatableP", "isCompleted"]
+- !private ["s9EquatableP", "loadedTasks"]
 - !private ["s9EquatableP", "subscript"]
-- !private ["s9EquatableP", "tasks"]
-- !private ["s25ExpressibleByArrayLiteralP", "isCompleted"]
+- !private ["s9EquatableP", "taskNameLabel"]
+- !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "user"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s25ExpressibleByArrayLiteralP", "user"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - ["s8HashableP", ""]
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "delegate"]
 - !private ["s8HashableP", "indexP"]
 - !private ["s8HashableP", "init"]
-- !private ["s8HashableP", "tasks"]
+- !private ["s8HashableP", "loadedTasks"]
+- !private ["s8HashableP", "taskNameLabel"]
+- !private ["s8HashableP", "text"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
-- !private ["s17MutableCollectionP", "isCompleted"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
 - !private ["s17MutableCollectionP", "subscript"]
+- !private ["s17MutableCollectionP", "user"]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "delegate"]
 - !private ["So8NSCodingP", "indexP"]
 - !private ["So8NSCodingP", "init"]
-- !private ["So8NSCodingP", "tasks"]
+- !private ["So8NSCodingP", "loadedTasks"]
+- !private ["So8NSCodingP", "taskNameLabel"]
+- !private ["So8NSCodingP", "text"]
 - ["So8NSObjectC", "ChangeButton"]
+- ["So8NSObjectC", "DatabaseTask"]
 - ["So8NSObjectC", "Int"]
-- ["So8NSObjectC", "Task"]
 - ["So8NSObjectC", "UIButton"]
 - ["So8NSObjectC", "UILabel"]
 - ["So8NSObjectC", "checkBoxAction"]
 - ["So8NSObjectC", "checkBoxOutlet"]
+- ["So8NSObjectC", "configureCell"]
 - ["So8NSObjectC", "delegate"]
 - ["So8NSObjectC", "indexP"]
 - ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "loadedTasks"]
 - ["So8NSObjectC", "taskNameLabel"]
-- ["So8NSObjectC", "tasks"]
+- !private ["So8NSObjectC", "text"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["So16NSObjectProtocolP", "delegate"]
 - !private ["So16NSObjectProtocolP", "indexP"]
 - !private ["So16NSObjectProtocolP", "init"]
-- !private ["So16NSObjectProtocolP", "tasks"]
-- !private ["s22RandomAccessCollectionP", "isCompleted"]
+- !private ["So16NSObjectProtocolP", "loadedTasks"]
+- !private ["So16NSObjectProtocolP", "taskNameLabel"]
+- !private ["So16NSObjectProtocolP", "text"]
 - !private ["s22RandomAccessCollectionP", "subscript"]
-- !private ["s26RangeReplaceableCollectionP", "isCompleted"]
+- !private ["s22RandomAccessCollectionP", "user"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "subscript"]
-- !private ["s8SequenceP", "isCompleted"]
+- !private ["s26RangeReplaceableCollectionP", "user"]
+- !private ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "subscript"]
-- !private ["7CS_M1174TaskC", "isCompleted"]
+- !private ["s8SequenceP", "user"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
 - ["7CS_M1178TaskCellC", "ChangeButton"]
+- ["7CS_M1178TaskCellC", "DatabaseTask"]
 - ["7CS_M1178TaskCellC", "Int"]
-- ["7CS_M1178TaskCellC", "Task"]
 - ["7CS_M1178TaskCellC", "UIButton"]
 - ["7CS_M1178TaskCellC", "UILabel"]
 - ["7CS_M1178TaskCellC", "checkBoxAction"]
 - ["7CS_M1178TaskCellC", "checkBoxOutlet"]
+- ["7CS_M1178TaskCellC", "configureCell"]
 - ["7CS_M1178TaskCellC", "deinit"]
 - ["7CS_M1178TaskCellC", "delegate"]
 - ["7CS_M1178TaskCellC", "indexP"]
 - ["7CS_M1178TaskCellC", "init"]
+- ["7CS_M1178TaskCellC", "loadedTasks"]
 - ["7CS_M1178TaskCellC", "taskNameLabel"]
-- ["7CS_M1178TaskCellC", "tasks"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
 - ["So29UIAccessibilityIdentificationP", ""]
 - !private ["So29UIAccessibilityIdentificationP", "delegate"]
 - !private ["So29UIAccessibilityIdentificationP", "indexP"]
 - !private ["So29UIAccessibilityIdentificationP", "init"]
-- !private ["So29UIAccessibilityIdentificationP", "tasks"]
+- !private ["So29UIAccessibilityIdentificationP", "loadedTasks"]
+- !private ["So29UIAccessibilityIdentificationP", "taskNameLabel"]
+- !private ["So29UIAccessibilityIdentificationP", "text"]
 - ["So12UIAppearanceP", ""]
 - !private ["So12UIAppearanceP", "delegate"]
 - !private ["So12UIAppearanceP", "indexP"]
 - !private ["So12UIAppearanceP", "init"]
-- !private ["So12UIAppearanceP", "tasks"]
+- !private ["So12UIAppearanceP", "loadedTasks"]
+- !private ["So12UIAppearanceP", "taskNameLabel"]
+- !private ["So12UIAppearanceP", "text"]
 - ["So21UIAppearanceContainerP", ""]
 - !private ["So21UIAppearanceContainerP", "delegate"]
 - !private ["So21UIAppearanceContainerP", "indexP"]
 - !private ["So21UIAppearanceContainerP", "init"]
-- !private ["So21UIAppearanceContainerP", "tasks"]
+- !private ["So21UIAppearanceContainerP", "loadedTasks"]
+- !private ["So21UIAppearanceContainerP", "taskNameLabel"]
+- !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "text"]
 - ["So17UICoordinateSpaceP", ""]
 - !private ["So17UICoordinateSpaceP", "delegate"]
 - !private ["So17UICoordinateSpaceP", "indexP"]
 - !private ["So17UICoordinateSpaceP", "init"]
-- !private ["So17UICoordinateSpaceP", "tasks"]
+- !private ["So17UICoordinateSpaceP", "loadedTasks"]
+- !private ["So17UICoordinateSpaceP", "taskNameLabel"]
+- !private ["So17UICoordinateSpaceP", "text"]
 - ["So13UIDynamicItemP", ""]
 - !private ["So13UIDynamicItemP", "delegate"]
 - !private ["So13UIDynamicItemP", "indexP"]
 - !private ["So13UIDynamicItemP", "init"]
-- !private ["So13UIDynamicItemP", "tasks"]
+- !private ["So13UIDynamicItemP", "loadedTasks"]
+- !private ["So13UIDynamicItemP", "taskNameLabel"]
+- !private ["So13UIDynamicItemP", "text"]
 - ["So18UIFocusEnvironmentP", ""]
 - !private ["So18UIFocusEnvironmentP", "delegate"]
 - !private ["So18UIFocusEnvironmentP", "indexP"]
 - !private ["So18UIFocusEnvironmentP", "init"]
-- !private ["So18UIFocusEnvironmentP", "tasks"]
+- !private ["So18UIFocusEnvironmentP", "loadedTasks"]
+- !private ["So18UIFocusEnvironmentP", "taskNameLabel"]
+- !private ["So18UIFocusEnvironmentP", "text"]
 - ["So11UIFocusItemP", ""]
 - !private ["So11UIFocusItemP", "delegate"]
 - !private ["So11UIFocusItemP", "indexP"]
 - !private ["So11UIFocusItemP", "init"]
-- !private ["So11UIFocusItemP", "tasks"]
+- !private ["So11UIFocusItemP", "loadedTasks"]
+- !private ["So11UIFocusItemP", "taskNameLabel"]
+- !private ["So11UIFocusItemP", "text"]
 - ["So27UIGestureRecognizerDelegateP", ""]
 - !private ["So27UIGestureRecognizerDelegateP", "delegate"]
 - !private ["So27UIGestureRecognizerDelegateP", "indexP"]
 - !private ["So27UIGestureRecognizerDelegateP", "init"]
-- !private ["So27UIGestureRecognizerDelegateP", "tasks"]
+- !private ["So27UIGestureRecognizerDelegateP", "loadedTasks"]
+- !private ["So27UIGestureRecognizerDelegateP", "taskNameLabel"]
+- !private ["So7UILabelC", "text"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "delegate"]
 - !private ["So30UIPasteConfigurationSupportingP", "indexP"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
-- !private ["So30UIPasteConfigurationSupportingP", "tasks"]
+- !private ["So30UIPasteConfigurationSupportingP", "loadedTasks"]
+- !private ["So30UIPasteConfigurationSupportingP", "taskNameLabel"]
+- !private ["So30UIPasteConfigurationSupportingP", "text"]
 - ["So11UIResponderC", "ChangeButton"]
+- ["So11UIResponderC", "DatabaseTask"]
 - ["So11UIResponderC", "Int"]
-- ["So11UIResponderC", "Task"]
 - ["So11UIResponderC", "UIButton"]
 - ["So11UIResponderC", "UILabel"]
 - ["So11UIResponderC", "checkBoxAction"]
 - ["So11UIResponderC", "checkBoxOutlet"]
+- ["So11UIResponderC", "configureCell"]
 - ["So11UIResponderC", "delegate"]
 - ["So11UIResponderC", "indexP"]
 - ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "loadedTasks"]
 - ["So11UIResponderC", "taskNameLabel"]
-- ["So11UIResponderC", "tasks"]
+- !private ["So11UIResponderC", "text"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "delegate"]
 - !private ["So30UIResponderStandardEditActionsP", "indexP"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
-- !private ["So30UIResponderStandardEditActionsP", "tasks"]
+- !private ["So30UIResponderStandardEditActionsP", "loadedTasks"]
+- !private ["So30UIResponderStandardEditActionsP", "taskNameLabel"]
+- !private ["So30UIResponderStandardEditActionsP", "text"]
 - ["So15UITableViewCellC", "ChangeButton"]
+- ["So15UITableViewCellC", "DatabaseTask"]
 - ["So15UITableViewCellC", "Int"]
-- ["So15UITableViewCellC", "Task"]
 - ["So15UITableViewCellC", "UIButton"]
 - ["So15UITableViewCellC", "UILabel"]
 - ["So15UITableViewCellC", ""]
 - ["So15UITableViewCellC", "checkBoxAction"]
 - ["So15UITableViewCellC", "checkBoxOutlet"]
+- ["So15UITableViewCellC", "configureCell"]
 - ["So15UITableViewCellC", "delegate"]
 - ["So15UITableViewCellC", "indexP"]
 - ["So15UITableViewCellC", "init"]
+- ["So15UITableViewCellC", "loadedTasks"]
 - ["So15UITableViewCellC", "taskNameLabel"]
-- ["So15UITableViewCellC", "tasks"]
 - ["So18UITraitEnvironmentP", ""]
 - !private ["So18UITraitEnvironmentP", "delegate"]
 - !private ["So18UITraitEnvironmentP", "indexP"]
 - !private ["So18UITraitEnvironmentP", "init"]
-- !private ["So18UITraitEnvironmentP", "tasks"]
+- !private ["So18UITraitEnvironmentP", "loadedTasks"]
+- !private ["So18UITraitEnvironmentP", "taskNameLabel"]
+- !private ["So18UITraitEnvironmentP", "text"]
 - ["So6UIViewC", "ChangeButton"]
+- ["So6UIViewC", "DatabaseTask"]
 - ["So6UIViewC", "Int"]
-- ["So6UIViewC", "Task"]
 - ["So6UIViewC", "UIButton"]
 - ["So6UIViewC", "UILabel"]
 - ["So6UIViewC", "checkBoxAction"]
 - ["So6UIViewC", "checkBoxOutlet"]
+- ["So6UIViewC", "configureCell"]
 - ["So6UIViewC", "delegate"]
 - ["So6UIViewC", "indexP"]
 - ["So6UIViewC", "init"]
+- ["So6UIViewC", "loadedTasks"]
 - ["So6UIViewC", "taskNameLabel"]
-- ["So6UIViewC", "tasks"]
-- !private ["s14_ArrayProtocolP", "isCompleted"]
+- !private ["So6UIViewC", "text"]
 - !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s14_ArrayProtocolP", "user"]
 - ["s37_DefaultCustomPlaygroundQuickLookableP", ""]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "delegate"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "indexP"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
-- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "tasks"]
-- !private ["s24_DestructorSafeContainerP", "isCompleted"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "loadedTasks"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "taskNameLabel"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
 - !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s24_DestructorSafeContainerP", "user"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "indexP"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "tasks"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "loadedTasks"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "taskNameLabel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - !private "Sa"
 - !private "s10ArraySliceV"
@@ -248,17 +328,23 @@ depends-nominal:
 - "s7CVarArgP"
 - "7CS_M11712ChangeButtonP"
 - !private "s10CollectionP"
+- !private "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
 - !private "s29CustomPlaygroundQuickLookableP"
 - !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
+- !private "7CS_M11712DatabaseTaskV"
 - !private "s9DecodableP"
 - !private "s9EncodableP"
 - "s9EquatableP"
 - !private "s25ExpressibleByArrayLiteralP"
 - !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "s8HashableP"
 - !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
 - !private "s17MutableCollectionP"
 - "So8NSCodingP"
 - "So8NSObjectC"
@@ -266,16 +352,21 @@ depends-nominal:
 - !private "s22RandomAccessCollectionP"
 - !private "s26RangeReplaceableCollectionP"
 - !private "s8SequenceP"
-- !private "7CS_M1174TaskC"
+- !private "SS"
+- !private "s14StringProtocolP"
 - "7CS_M1178TaskCellC"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
 - "So29UIAccessibilityIdentificationP"
 - "So12UIAppearanceP"
 - "So21UIAppearanceContainerP"
+- !private "So30UIContentSizeCategoryAdjustingP"
 - "So17UICoordinateSpaceP"
 - "So13UIDynamicItemP"
 - "So18UIFocusEnvironmentP"
 - "So11UIFocusItemP"
 - "So27UIGestureRecognizerDelegateP"
+- !private "So7UILabelC"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
@@ -286,8 +377,14 @@ depends-nominal:
 - "s37_DefaultCustomPlaygroundQuickLookableP"
 - !private "s24_DestructorSafeContainerP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - !private "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
@@ -371,4 +468,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "4f014a561387b76c959262038ce32e42"
+interface-hash: "85566e979ecad7922c98a2cb4f50d368"

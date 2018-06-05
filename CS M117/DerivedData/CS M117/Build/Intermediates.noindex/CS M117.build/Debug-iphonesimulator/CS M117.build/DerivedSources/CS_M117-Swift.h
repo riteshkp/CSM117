@@ -188,6 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC7CS_M11721AddTaskViewController")
 @interface AddTaskViewController : UIViewController
+- (IBAction)back:(id _Nonnull)sender;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified taskNameOutlet;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified taskPointsOutlet;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified deadlineOutlet;
@@ -213,6 +214,29 @@ SWIFT_CLASS("_TtC7CS_M11711AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UILabel;
+
+SWIFT_CLASS("_TtC7CS_M11715LeaderboardCell")
+@interface LeaderboardCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified UserLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ScoreLabel;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+
+SWIFT_CLASS("_TtC7CS_M11725LeaderboardViewController")
+@interface LeaderboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified leaderboardTableView;
+- (void)viewDidLoad;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)viewWillAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIButton;
 
 SWIFT_CLASS("_TtC7CS_M1176SignUp")
@@ -232,7 +256,6 @@ SWIFT_CLASS("_TtC7CS_M1176SignUp")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
 
 SWIFT_CLASS("_TtC7CS_M1178TaskCell")
 @interface TaskCell : UITableViewCell
@@ -243,7 +266,6 @@ SWIFT_CLASS("_TtC7CS_M1178TaskCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableView;
 
 SWIFT_CLASS("_TtC7CS_M11722TaskPageViewController")
 @interface TaskPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -253,6 +275,7 @@ SWIFT_CLASS("_TtC7CS_M11722TaskPageViewController")
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -263,9 +286,9 @@ SWIFT_CLASS("_TtC7CS_M11714ViewController")
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailText;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordText;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified actionButton;
+- (IBAction)signup:(id _Nonnull)sender;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified signUpButton;
 - (IBAction)action:(UIButton * _Nonnull)sender;
-- (IBAction)signUp:(UIButton * _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;

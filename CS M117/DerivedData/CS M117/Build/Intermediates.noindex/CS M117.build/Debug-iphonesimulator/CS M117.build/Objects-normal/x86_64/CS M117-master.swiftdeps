@@ -1,11 +1,15 @@
 version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
 options: "d064c6233b2e699e67d3b71c5a76e806"
-build_time: [1527971782, 639473000]
+build_time: [1528219665, 156394000]
 inputs:
-  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/TaskCell.swift": [1527745926, 0]
-  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/ViewController.swift": [1527970843, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/Models/DatabaseTask.swift": [1528177627, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/TaskCell.swift": [1528177627, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/ViewController.swift": [1528066065, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/Models/Users.swift": [1528177627, 0]
   "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/SignUp.swift": [1527970843, 0]
   "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/AppDelegate.swift": [1527745926, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/LeaderboardViewController.swift": [1528177627, 0]
   "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/Models/Task.swift": [1527745926, 0]
-  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/TaskPageViewController.swift": [1527970843, 0]
-  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/AddTaskViewController.swift": [1527971771, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/LeaderboardCell.swift": [1528066064, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/TaskPageViewController.swift": [1528219664, 0]
+  "/Users/mertdusunceli/Desktop/spring 18/cs m117/CSM117/CS M117/CS M117/AddTaskViewController.swift": [1528066064, 0]
