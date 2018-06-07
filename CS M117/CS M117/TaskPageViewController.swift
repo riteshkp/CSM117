@@ -115,10 +115,10 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 for tasks in results {
                     if tasks.Group == userGroup && tasks.user == ""{
-                        //if self.loadedTasks.contains(where: {$0.key == tasks.key}) {
-                        //} else {
+                        if self.loadedTasks.contains(where: {$0.key == tasks.key}) {
+                        } else {
                             self.loadedTasks.append(tasks)
-                        //}
+                        }
 
                     }
                 }
