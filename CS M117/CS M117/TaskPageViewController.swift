@@ -14,6 +14,9 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     var tasks: [Task] = []
     var loadedTasks: [DatabaseTask] = [] //For tasks loaded from database
+    var refresher: UIRefreshControl!
+    
+
     
     var dataBaseRef: DatabaseReference! {
         return Database.database().reference()
@@ -21,7 +24,17 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         fetchTasks()
+        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull down to refresh screen")
+        refresher.addTarget(self, action: #selector(TaskPageViewController.fetchTasks) , for: UIControlEvents.valueChanged)
+        tableView.addSubview(refresher)
     }
+    
+//   override viewDidLoad()
+// {
+    
+// }
     
     @IBAction func plus(_ sender: Any) {
         self.performSegue(withIdentifier: "addTask", sender: self)
@@ -97,7 +110,7 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         //        tableView.reloadData()
     }
     
-    func fetchTasks() {
+    @objc func fetchTasks() {
         let userRef = dataBaseRef.child("USERS/\(Auth.auth().currentUser!.uid)")    //get user info
         userRef.observe(.value) { (snapshot) in
             
