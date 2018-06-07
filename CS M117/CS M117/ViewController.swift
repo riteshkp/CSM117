@@ -65,29 +65,7 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
-//            else                                                // sign up user
-//            {
-//                Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: {(user, error) in
-//                    if user != nil          //user exists, and sign up successful
-//                    {
-//                        print("Sucess")
-//                    }
-//                    else                    // user not available, going to print error messages
-//                    {
-//                        if let myError = error?.localizedDescription        // generic error messages, if available
-//                        {
-//                            print (myError)
-//                        }
-//                        else                // no generic messages error, so print my message
-//                        {
-//                            print ("Error")
-//                        }
-//                    }
-//                })
-//            }
-//        }
-//    }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

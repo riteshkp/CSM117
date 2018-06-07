@@ -55,12 +55,10 @@ class SignUp: UIViewController {
                     }
                 }
                 // Get a reference to the database service
-//                var database = firebase.database();
                 
                 if (success == 1)
                 {
                     self.createAlert(title: "Success!", message: "")
-                   // self.performSegue(withIdentifier: "backtologin", sender: self)
                 }
             })
         }
