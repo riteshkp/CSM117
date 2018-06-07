@@ -27,7 +27,7 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         
         refresher = UIRefreshControl()
         refresher.attributedTitle = NSAttributedString(string: "Pull down to refresh screen")
-        refresher.addTarget(self, action: #selector(TaskPageViewController.fetchTasks) , for: UIControlEvents.valueChanged)
+        refresher.addTarget(self, action: #selector(TaskPageViewController.refreshPage) , for: UIControlEvents.valueChanged)
         tableView.addSubview(refresher)
     }
     
@@ -140,6 +140,12 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             })
         }
+    }
+    
+    @objc func refreshPage()
+    {
+        fetchTasks()
+        refresher.endRefreshing()
     }
 }
 
