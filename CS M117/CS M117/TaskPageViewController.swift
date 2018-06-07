@@ -31,10 +31,7 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.addSubview(refresher)
     }
     
-//   override viewDidLoad()
-// {
-    
-// }
+
     
     @IBAction func plus(_ sender: Any) {
         self.performSegue(withIdentifier: "addTask", sender: self)
@@ -55,22 +52,13 @@ class TaskPageViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
         cell.configureCell(tasks: loadedTasks[indexPath.row])
-        /*if tasks[indexPath.row].isCompleted{//Sets checkbox accordingly
-         cell.checkBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "checkBoxFILLED-1"), for: UIControlState.normal)
-         } else {
-         cell.checkBoxOutlet.setBackgroundImage(#imageLiteral(resourceName: "checkBoxOUTLINE "), for: UIControlState.normal)
-         }*/
+
         cell.delegate = self
         cell.indexP = indexPath.row
         cell.loadedTasks = loadedTasks
         return cell
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        let vc = segue.destination as! ViewController
-    //        let vc = segue.destination as! AddTaskViewController
-    //        vc.delegate = self
-    //    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {

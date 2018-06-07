@@ -75,7 +75,6 @@ class AddTaskViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
-//    var ref:DatabaseReference?
     
     func isStringAnInt(string: String) -> Bool {
         return Int(string) != nil
