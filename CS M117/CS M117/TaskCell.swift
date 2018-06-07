@@ -45,7 +45,7 @@ class TaskCell: UITableViewCell {
         let date = givenDate // Get Todays Date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        let stringDate: String = dateFormatter.string(from: date as! Date)
+        let stringDate: String = dateFormatter.string(from: date )
         return stringDate
     }
     
